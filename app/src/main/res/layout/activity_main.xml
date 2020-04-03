@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
     tools:context=".MainActivity">
 
 
@@ -13,39 +14,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:background="#FFFFFF"
+        android:background="@drawable/gradient"
         android:bufferType="normal"
         android:gravity="center"
         android:text="לקריאת הסכם עבודה אישי לחץ על הכפתור"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="22dp" />
 
     <WebView
+        android:id="@+id/Wv"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:id="@+id/Wv"/>
+        android:background="@drawable/gradient"
+        android:visibility="invisible">
 
+    </WebView>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        />
     <Button
         android:id="@+id/button_send"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom"
         android:onClick="show"
-        android:text="show" />
+        android:text="הצג"
+        android:textColor="#FFFFFF" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom2"
         android:onClick="next"
-        android:text="מאשר את תנאי ההסכם" />
+        android:text="מאשר את תנאי ההסכם"
+        android:textColor="#FFFFFF" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:gravity="center"
-
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="!!אישור זה אינו תחליך לחתימה " />
+        android:layout_gravity="center"
+        android:background="@drawable/gradient"
+        android:text="!!אישור זה אינו תחליך לחתימה "
+        android:textColor="#FFFFFF" />
 
 
 </LinearLayout>

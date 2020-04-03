@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         wv=(WebView)findViewById(R.id.Wv);
     }
     public void show (View view ){
+        wv.setVisibility( View.VISIBLE );
         wv.getSettings().setJavaScriptEnabled( true );
         String url="https://drive.google.com/file/d/1-mPGDN9CZVw9FyV17b-NrMvgYP8Yrid-/view?usp=sharing";
         wv.loadUrl( url );
