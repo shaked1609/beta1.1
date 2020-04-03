@@ -32,7 +32,7 @@ EditText edt,name;
         String[] recipients = recipientList.split(",");
 
         String subject = "Income Tax Form and Police of:"+name.getText().toString();
-        String message = "בבקשה לצרף את התמונות של התפסים ולשלוח";
+        String message = "בבקשה לצרף את התמונות של הטפסים ולשלוח";
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL, recipients);
