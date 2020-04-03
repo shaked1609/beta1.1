@@ -36,10 +36,12 @@ int x=0;
         String[] recipients = recipientList.split(",");
 
         String subject = "first name: "+a1.getText().toString()+", last name: "+a2.getText().toString()+", I.D: "+a3.getText().toString();
-        String message = ", Date of birth: "+a4.getText().toString()+", Marital Status: "+a5.getText().toString()+", E-Mail: "+a6.getText().toString()+
+        String message = "Date of birth: "+a4.getText().toString()+", Marital Status: "+a5.getText().toString()+", E-Mail: "+a6.getText().toString()+
         ", city: "+a7.getText().toString()+", street:"+a8.getText().toString()+", house number: "+a9.getText().toString()+
                 ", Postal Code: "+a10.getText().toString()+", phone number: "+a11.getText().toString()+", mobile phone number: "+a12.getText().toString()+
                 ", gender: "+a13.getText().toString()+", The name of the school where you are employed, if any else Type no: "+a14.getText().toString()+", Are you a qualified teacher for teaching: "+a15.getText().toString()+"" +
+                "" +
+                "" +
                 "" + "the bank's name: "+b1.getText().toString()+", branch name: "+b2.getText().toString()+", branch number:"+b3.getText().toString()
         +", Address of the branch: "+b4.getText().toString()+", Account Number: "+b2.getText().toString();
 
