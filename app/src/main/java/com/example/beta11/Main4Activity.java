@@ -2,39 +2,45 @@ package com.example.beta11;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.EditText;
+
 
 public class Main4Activity extends AppCompatActivity {
-    ImageView imageView;
+EditText edt,name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main4 );
-        Button btnCamera = (Button)findViewById(R.id.btnCamera);
-        imageView = (ImageView)findViewById(R.id.imageView);
-
-        btnCamera.setOnClickListener(new View.OnClickListener() {
+        edt=(EditText)findViewById( R.id.edt );
+        name=(EditText)findViewById( R.id.fullName );
+        Button buttonSend = findViewById(R.id.btn);
+        buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,0);
+            public void onClick(View v) {
+                sendMail();
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = (Bitmap)data.getExtras().get("data");
-        imageView.setImageBitmap(bitmap);
-    }
+    private void sendMail() {
+        String recipientList = edt.getText().toString();
+        String[] recipients = recipientList.split(",");
 
+        String subject = "Income Tax Form and Police of:"+name.getText().toString();
+        String message = "בבקשה לצרף את התמונות של התפסים ולשלוח";
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Choose an email client"));
+    }
 
 }

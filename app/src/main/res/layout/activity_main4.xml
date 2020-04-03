@@ -8,18 +8,22 @@
     tools:context=".Main4Activity">
 
 
-    <ImageView
-        android:id="@+id/imageView"
+    <EditText
+        android:id="@+id/edt"
         android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:ignore="VectorDrawableCompat" />
-
+        android:hint="E-Mail" />
+    <EditText
+        android:id="@+id/fullName"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:hint="Enter your full name" />
     <Button
-        android:id="@+id/btnCamera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
+    android:id="@+id/btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="send" />
 
 </LinearLayout>
