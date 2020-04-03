@@ -2,6 +2,7 @@ package com.example.beta11;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -20,5 +21,9 @@ WebView we;
         String url="https://tofes101.co.il/fill-form-101/";
         we.loadUrl( url );
 
+    }
+    public void next1(View view){
+        Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
+        startActivity(intent);
     }
 }

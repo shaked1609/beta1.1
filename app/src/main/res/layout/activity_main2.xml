@@ -28,21 +28,21 @@
         >
 
         <EditText
-            android:id="@+id/first_name"
+            android:id="@+id/a1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="First name" />
 
         <EditText
-            android:id="@+id/lest_name"
+            android:id="@+id/a2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Lest_name" />
 
         <EditText
-            android:id="@+id/I.D"
+            android:id="@+id/a3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,21 +56,21 @@
         >
 
         <EditText
-            android:id="@+id/DateOfBirth"
+            android:id="@+id/a4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Date of birth" />
 
         <EditText
-            android:id="@+id/MaritalStatus"
+            android:id="@+id/a5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Marital Status" />
 
         <EditText
-            android:id="@+id/Mail"
+            android:id="@+id/a6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -83,21 +83,21 @@
         >
 
         <EditText
-            android:id="@+id/Town"
+            android:id="@+id/a7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Town / City" />
 
         <EditText
-            android:id="@+id/Address"
+            android:id="@+id/a8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Address" />
 
         <EditText
-            android:id="@+id/HouseNumber"
+            android:id="@+id/a9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -110,34 +110,34 @@
         >
 
         <EditText
-            android:id="@+id/PostalCode"
+            android:id="@+id/a10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Postal Code" />
 
         <EditText
-            android:id="@+id/PhoneNumber"
+            android:id="@+id/a11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Phone Number" />
 
-        <EditText
-            android:id="@+id/MobilePhoneNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="mobile phone number" />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         >
-
         <EditText
-            android:id="@+id/gender"
+            android:id="@+id/a12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="mobile phone number" />
+        <EditText
+            android:id="@+id/a13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -152,7 +152,7 @@
         android:layout_weight="1"
         >
         <EditText
-            android:id="@+id/YesNo"
+            android:id="@+id/a14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -165,7 +165,7 @@
         >
 
         <EditText
-            android:id="@+id/Yes_No"
+            android:id="@+id/a15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="25dp"
+            android:textSize="18dp"
             android:text="פרטי חשבון בנק" />
     </LinearLayout>
     <LinearLayout
@@ -192,20 +192,20 @@
         >
 
         <EditText
-            android:id="@+id/bank"
+            android:id="@+id/b1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="The bank's name" />
 
         <EditText
-            android:id="@+id/branchName"
+            android:id="@+id/b2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Branch name" />
         <EditText
-            android:id="@+id/branchNumber"
+            android:id="@+id/b3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -220,13 +220,13 @@
 
 
         <EditText
-            android:id="@+id/Addressofthebranch"
+            android:id="@+id/b4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Address of the branch" />
         <EditText
-            android:id="@+id/AccountNumber"
+            android:id="@+id/b5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -240,12 +240,38 @@
         android:layout_weight="1"
         >
 
+
+
+        <EditText
+            android:id="@+id/a16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="E-Mail to send to" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/a17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="send"
+            />
+
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="send"
-            android:onClick="sd"/>
+            android:onClick="sd"
+            android:text="next" />
     </LinearLayout>
 </LinearLayout>
