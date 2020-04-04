@@ -31,7 +31,7 @@ EditText edt,name;
         String recipientList = edt.getText().toString();
         String[] recipients = recipientList.split(",");
 
-        String subject = "Income Tax Form and Police of:"+name.getText().toString();
+        String subject = "Income Tax Form and Police and signature of:"+name.getText().toString();
         String message = "בבקשה לצרף את התמונות של הטפסים ולשלוח";
 
         Intent intent = new Intent(Intent.ACTION_SEND);

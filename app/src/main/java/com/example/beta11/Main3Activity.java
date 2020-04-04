@@ -17,6 +17,7 @@ WebView we;
 
     }
     public void open (View view ){
+        we.setVisibility( View.VISIBLE );
         we.getSettings().setJavaScriptEnabled( true );
         String url="https://tofes101.co.il/fill-form-101/";
         we.loadUrl( url );

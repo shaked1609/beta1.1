@@ -5,25 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
     tools:context=".Main4Activity">
 
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:bufferType="normal"
+        android:gravity="center"
+        android:text="למייל יש לצרף:"
+        android:textSize="28dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:bufferType="normal"
+        android:gravity="center"
+        android:text="טופס משטרה, תיאום מס וחתימה שקיבלת במסך הראשון"
+        android:textSize="28dp" />
 
     <EditText
         android:id="@+id/edt"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:hint="E-Mail" />
+        android:gravity="center"
+        android:hint="E-Mail"
+        android:textColorHint="#FFFFFF" />
+
     <EditText
         android:id="@+id/fullName"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:hint="Enter your full name" />
+        android:gravity="center"
+        android:hint="Enter your full name"
+        android:textColorHint="#FFFFFF" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
     <Button
     android:id="@+id/btn"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom"
     android:text="send" />
 
 </LinearLayout>
