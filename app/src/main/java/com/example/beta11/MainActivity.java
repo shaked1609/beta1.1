@@ -22,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
         wv.getSettings().setJavaScriptEnabled( true );
         String url="https://drive.google.com/file/d/1-mPGDN9CZVw9FyV17b-NrMvgYP8Yrid-/view?usp=sharing";
         wv.loadUrl( url );
+        //https://signature-maker.net/signature-creator
+    }
+    public void signature(View view){
+        wv.getSettings().setJavaScriptEnabled( true );
+        String url="https://signature-maker.net/signature-creator";
+        wv.loadUrl( url );
+
 
     }
     public void next (View view){

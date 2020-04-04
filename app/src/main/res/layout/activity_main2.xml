@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
     tools:context=".Main2Activity">
 
     <LinearLayout
@@ -12,14 +13,16 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         >
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="serif"
             android:gravity="center"
-            android:textSize="25dp"
-            android:text="נספח תנאי העסקה פרטים אישיים" />
+            android:text="נספח תנאי העסקה פרטים אישיים"
+            android:textSize="25dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,21 +35,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="First name" />
+            android:hint="First name"
+            android:inputType="textPersonName"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Lest_name" />
+            android:hint="Lest_name"
+            android:inputType="textPersonName"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="I.D" />
+            android:hint="I.D"
+            android:inputType="number|numberPassword"
+            android:textColorHint="#FFFFFF" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,21 +69,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Date of birth" />
+            android:hint="Date of birth"
+            android:inputType="date"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Marital Status" />
+            android:hint="Marital Status"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="E-Mail" />
+            android:hint="E-Mail"
+            android:inputType="textWebEmailAddress|textEmailAddress"
+            android:textColorHint="#FFFFFF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,21 +102,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Town / City" />
+            android:hint="Town / City"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Address" />
+            android:hint="Address"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF" />
 
         <EditText
             android:id="@+id/a9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="House number" />
+            android:hint="House number"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,14 +136,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Postal Code" />
+            android:hint="Postal Code"
+            android:inputType="textPostalAddress"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/a11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Phone Number" />
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:textColorHint="#FFFFFF" />
 
 
     </LinearLayout>
@@ -130,18 +156,24 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         >
+
         <EditText
             android:id="@+id/a12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="mobile phone number" />
+            android:hint="mobile phone number"
+            android:inputType="phone"
+            android:textColorHint="#FFFFFF" />
+
         <EditText
             android:id="@+id/a13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Gender" />
+            android:hint="Gender"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
 
 
 
@@ -149,15 +181,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.98"
         >
+
         <EditText
             android:id="@+id/a14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="The name of the school where you are employed, if any else Type no" />
+            android:hint="The name of the school where you are employed, if any else Type no"
+            android:textColorHint="#FFFFFF" />
+
     </LinearLayout>
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -169,21 +207,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Are you a qualified teacher for teaching" />
+            android:gravity="center"
+            android:hint="Are you a qualified teacher for teaching"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         >
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="serif"
             android:gravity="center"
-            android:textSize="18dp"
-            android:text="פרטי חשבון בנק" />
+            android:text="פרטי חשבון בנק"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#00510E"
+            android:textSize="24sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -196,20 +241,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="The bank's name" />
+            android:hint="The bank's name"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/b2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Branch name" />
+            android:hint="Branch name"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
+
         <EditText
             android:id="@+id/b3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Town / City" />
+            android:hint="Town / City"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
 
     </LinearLayout>
     <LinearLayout
@@ -224,13 +275,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Address of the branch" />
+            android:hint="Address of the branch"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
+
         <EditText
             android:id="@+id/b5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Account Number" />
+            android:hint="Account Number"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF" />
 
 
     </LinearLayout>
@@ -241,13 +297,15 @@
         >
 
 
-
         <EditText
             android:id="@+id/a16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="E-Mail to send to" />
+            android:gravity="center"
+            android:hint="E-Mail to send to"
+            android:inputType="textWebEmailAddress"
+            android:textColorHint="#FFFFFF" />
 
 
     </LinearLayout>
@@ -263,8 +321,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="send"
-            />
+            android:background="@drawable/custom"
+            android:text="send" />
 
         <Button
             android:id="@+id/button"
@@ -272,6 +330,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="sd"
+            android:background="@drawable/custom2"
             android:text="next" />
     </LinearLayout>
 </LinearLayout>

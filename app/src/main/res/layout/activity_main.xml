@@ -17,9 +17,8 @@
         android:background="@drawable/gradient"
         android:bufferType="normal"
         android:gravity="center"
-        android:text="לקריאת הסכם עבודה אישי לחץ על הכפתור"
-        android:textColor="#FFFFFF"
-        android:textSize="22dp" />
+        android:text="לקריאת הסכם עבודה אישי לחץ על כפתור הצג"
+        android:textSize="28dp" />
 
     <WebView
         android:id="@+id/Wv"
@@ -40,7 +39,21 @@
         android:layout_gravity="center"
         android:background="@drawable/custom"
         android:onClick="show"
-        android:text="הצג"
+        android:text="הצג הסכם תנאי העסקה"
+        android:textColor="#FFFFFF" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/sig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom"
+        android:onClick="signature"
+        android:text="הצג חתימה לאישור ההסכם"
         android:textColor="#FFFFFF" />
 
     <Space
@@ -54,7 +67,7 @@
         android:layout_gravity="center"
         android:background="@drawable/custom2"
         android:onClick="next"
-        android:text="מאשר את תנאי ההסכם"
+        android:text=" מאשר את תנאי ההסכם וברצוני להמשיך"
         android:textColor="#FFFFFF" />
 
     <Space
@@ -69,6 +82,13 @@
         android:background="@drawable/gradient"
         android:text="!!אישור זה אינו תחליך לחתימה "
         android:textColor="#FFFFFF" />
-
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/gradient"
+        android:text="את החתימה ששמרת יש לצרף בסוף האפליקציה"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>
