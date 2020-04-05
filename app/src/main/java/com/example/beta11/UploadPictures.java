@@ -97,7 +97,7 @@ public class UploadPictures extends AppCompatActivity {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
                 progressDialog.show();
-                StorageReference reference = storageReference.child( ID.getText().toString() + "/" + "Police form/" + UUID.randomUUID().toString() );
+                StorageReference reference = storageReference.child( ID.getText().toString() + "/" +ID.getText().toString()+"po"  );
                 reference.putFile( filePath ).addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -125,7 +125,7 @@ public class UploadPictures extends AppCompatActivity {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
                 progressDialog.show();
-                StorageReference reference = storageReference.child( ID.getText().toString() + "/" + "Tax Coordination/" + UUID.randomUUID().toString() );
+                StorageReference reference = storageReference.child( ID.getText().toString() +ID.getText().toString()+"tax" );
                 reference.putFile( filePath ).addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -154,7 +154,7 @@ public class UploadPictures extends AppCompatActivity {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
                 progressDialog.show();
-                StorageReference reference = storageReference.child( ID.getText().toString() + "/" + "signature/" + UUID.randomUUID().toString() );
+                StorageReference reference = storageReference.child( ID.getText().toString() + "/" +ID.getText().toString()+"sig" );
                 reference.putFile( filePath ).addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
