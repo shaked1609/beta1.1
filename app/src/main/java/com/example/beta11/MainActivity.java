@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void next (View view){
-        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+        Intent intent = new Intent(MainActivity.this, UploadPictures.class);
         startActivity(intent);
     }
 }

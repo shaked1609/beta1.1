@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    tools:context=".UploadPictures">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="ENTER YOUR I.D"
+        android:textColorHint="#ffffff"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/PoliceForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom"
+            android:text="Police form" />
+
+        <Button
+            android:id="@+id/TaxCoordination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom"
+            android:text="Tax Coordination" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom2"
+            android:onClick="im1"
+            android:text="Upload Police form" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom2"
+            android:onClick="im2"
+            android:text="Upload Tax Coordination " />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signature"
+        android:layout_weight="0"
+        android:background="@drawable/custom"
+        android:layout_width="wrap_content"
+        android:onClick="im3"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="signature" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom2"
+        android:onClick="im3"
+        android:layout_gravity="center"
+        android:text="Upload signature" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_gravity="end"
+        android:onClick="next2"
+        android:background="@drawable/custom2"
+        android:text="next" />
+</LinearLayout>
