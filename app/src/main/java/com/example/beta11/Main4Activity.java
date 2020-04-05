@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,7 +38,7 @@ public class Main4Activity extends AppCompatActivity {
 String Email,ID;
     StorageReference mStorageRef;
     public static StorageReference Ref;
-    ImageView iV;
+    ImageView iV,iv2,iv3;
     public Uri imguri;
 
 
@@ -46,18 +47,20 @@ String Email,ID;
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main4 );
 iV=(ImageView)findViewById( R.id.imageView2 ) ;
+iv2=(ImageView)findViewById( R.id.imageView3);
+iv3=(ImageView)findViewById( R.id.imageView4 );
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
         //edt=(EditText)findViewById( R.id.edt );
         //name=(EditText)findViewById( R.id.fullName );
         //iV=(ImageView)findViewById( R.id.imageView2 );
-        //Button buttonSend = findViewById(R.id.btn);
-       /* buttonSend.setOnClickListener(new View.OnClickListener() {
+        Button buttonSend = findViewById(R.id.button10);
+        buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendMail();
             }
-        });*/
+        });
 
         Button mShowDialog = (Button) findViewById(R.id.btn);
         mShowDialog.setOnClickListener(new View.OnClickListener() {
@@ -108,22 +111,56 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
 
     }
 
+    private void DownloadImg2() {// a method that downloads the url of the last added image
+        Ref = mStorageRef.child(""+ID).child( ""+ID+"tax" );
+        Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iv2);
+            }
 
 
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
 
-   /* private void sendMail() {
-        String recipientList = edt.getText().toString();
+            }
+        });
+
+    }
+    private void DownloadImg3() {// a method that downloads the url of the last added image
+        Ref = mStorageRef.child(""+ID).child( ""+ID+"sig" );
+        Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iv3);
+            }
+
+
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
+
+    private void sendMail() {
+        String recipientList =Email;
         String[] recipients = recipientList.split(",");
-        String subject = "Income Tax Form and Police and signature of:"+name.getText().toString();
+        String subject = "Income Tax Form and Police and signature of:"+ID;
         String message = "בבקשה לצרף את התמונות של הטפסים ולשלוח";
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL, recipients);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, message);
-
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));
-    }*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -162,5 +199,16 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
 
     public void sss(View view) {
         DownloadImg();
+
+    }
+
+    public void bbb(View view) {
+        DownloadImg2();
+    }
+
+
+
+    public void ccc(View view) {
+        DownloadImg3();
     }
 }

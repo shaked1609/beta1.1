@@ -127,7 +127,7 @@ public class UploadPictures extends AppCompatActivity {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
                 progressDialog.show();
-                StorageReference reference = storageReference.child( ID.getText().toString() +ID.getText().toString()+"tax" );
+                StorageReference reference = storageReference.child(  ID.getText().toString() + "/" +ID.getText().toString()+"tax" );
                 reference.putFile( filePath ).addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
