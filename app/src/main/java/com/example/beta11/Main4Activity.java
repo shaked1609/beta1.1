@@ -38,7 +38,7 @@ public class Main4Activity extends AppCompatActivity {
 String Email,ID;
     StorageReference mStorageRef;
     public static StorageReference Ref;
-    ImageView iV,iv2,iv3;
+    ImageView iV;
     public Uri imguri;
 
 
@@ -47,14 +47,12 @@ String Email,ID;
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main4 );
 iV=(ImageView)findViewById( R.id.imageView2 ) ;
-iv2=(ImageView)findViewById( R.id.imageView3);
-iv3=(ImageView)findViewById( R.id.imageView4 );
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
         //edt=(EditText)findViewById( R.id.edt );
         //name=(EditText)findViewById( R.id.fullName );
         //iV=(ImageView)findViewById( R.id.imageView2 );
-        Button buttonSend = findViewById(R.id.button10);
+        Button buttonSend = findViewById(R.id.button12);
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +114,7 @@ iv3=(ImageView)findViewById( R.id.imageView4 );
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iv2);
+                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iV);
             }
 
 
@@ -134,7 +132,7 @@ iv3=(ImageView)findViewById( R.id.imageView4 );
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iv3);
+                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iV);
             }
 
 

@@ -9,64 +9,74 @@
     tools:context=".Main4Activity">
 
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient"
-        android:bufferType="normal"
-        android:gravity="center"
-        android:text="טופס משטרה, תיאום מס וחתימה שקיבלת במסך הראשון"
-        android:textSize="28dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="25dp" />
-
     <Button
     android:id="@+id/btn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/custom"
-    android:text="send" />
-
-    <Button
-        android:id="@+id/button5"
+    android:text="fill data" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="sss"
         android:layout_gravity="center"
-        android:background="@drawable/custom2"
-        android:text="Button" />
+        android:layout_weight="0"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/custom2"
+            android:onClick="sss"
+            android:text="upload police" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="bbb"
+            android:background="@drawable/custom2"
+            android:text="upload tax" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="ccc"
+            android:background="@drawable/custom2"
+            android:text="upload signture" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:onClick="sss"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/gradient"
          />
-    <ImageView
-        android:id="@+id/imageView3"
+
+
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="bbb"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1"/>
-    <ImageView
-        android:id="@+id/imageView4"
+        android:text="לפי נתוני תעודת הזהות שציינת אלה התמונות אשר תצטרך לשלוח במייל"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FAF9F9"
+        android:gravity="center"
+         />
+
+    <Button
+        android:id="@+id/button12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:onClick="ccc"
-        android:layout_weight="1"
-         />
+        android:background="@drawable/custom"
+        android:text="sand mail" />
 </LinearLayout>
