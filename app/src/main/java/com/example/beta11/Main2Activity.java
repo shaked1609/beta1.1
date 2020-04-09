@@ -10,12 +10,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+/**
+ * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
+ * @version	4.1 (Jelly Bean)
+ * @since		20/03/2020
+ *באקטיביטי הזה נקבל מידע על המשתמש כגון פרטים אישיים ופרטי חשבון בנק דבר שבית הספר דורש מכל מתרגל לבצע לפני הירשמותו לבית הספר
+ */
 public class Main2Activity extends AppCompatActivity {
 EditText et16;
 EditText a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15;
 EditText b1,b2,b3,b4,b5;
 Button b17;
+int z=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +43,9 @@ Button b17;
         });
     }
     private void sendMail() {
+        if (z==2){
         String recipientList = et16.getText().toString();
         String[] recipients = recipientList.split(",");
-
         String subject = "first name: "+a1.getText().toString()+", last name: "+a2.getText().toString()+", I.D: "+a3.getText().toString();
         String message = "Personal Information"+".                                                   "+
                 "Date of birth: "+a4.getText().toString()+",   Marital Status: "+a5.getText().toString()+",  E-Mail: "+a6.getText().toString()+
@@ -55,11 +63,14 @@ Button b17;
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Choose an email client"));
+        startActivity(Intent.createChooser(intent, "Choose an email client"));}
+        else {Toast.makeText( Main2Activity.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
     }
     public void sd(View view){
+        if (z==2){
         Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
-        startActivity(intent);
+        startActivity(intent);}
+        else {Toast.makeText( Main2Activity.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

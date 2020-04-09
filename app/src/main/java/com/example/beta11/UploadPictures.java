@@ -29,7 +29,7 @@ import java.util.UUID;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- * האקטיביטי יציג בלחיצת כפתור למתרגל הבא להירשם לבית הספר את הסכם תנאי העסקה של בית הספר ויאשר את התנאים באמצעןת לחיצה על הפתוח מתחתיו וחתימה בתוך WebView ולאחר מכן יועבר לאקטיביטי הבא
+ *האקטיביטי יעלה לפייר בייס את טופס המשטרה הנדרש מהמתרגל להביא ,את טופס תיאום המס והחתימה מהאקטיביטי הראשון שפירושה אישור תנאי העסקה
  */
 
 public class UploadPictures extends AppCompatActivity {
@@ -39,6 +39,7 @@ public class UploadPictures extends AppCompatActivity {
     Uri filePath;
     FirebaseStorage storage;
     StorageReference storageReference;
+    int y=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +102,7 @@ public class UploadPictures extends AppCompatActivity {
 
     public void im1(View view) {
         if (ID.getText().length()==9) {
+            ID.setVisibility( view.GONE );
             if (filePath != null) {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
@@ -110,6 +112,7 @@ public class UploadPictures extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         progressDialog.dismiss();
+                        y++;
                         Toast.makeText( UploadPictures.this, "image uploaded", Toast.LENGTH_SHORT ).show();
                     }
                 } )
@@ -138,6 +141,7 @@ public class UploadPictures extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         progressDialog.dismiss();
+                        y++;
                         Toast.makeText( UploadPictures.this, "image uploaded", Toast.LENGTH_SHORT ).show();
                     }
                 } )
@@ -167,6 +171,7 @@ public class UploadPictures extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         progressDialog.dismiss();
+                        y++;
                         Toast.makeText( UploadPictures.this, "image uploaded", Toast.LENGTH_SHORT ).show();
                     }
                 } )
@@ -185,9 +190,10 @@ public class UploadPictures extends AppCompatActivity {
     }
 
     public void next2(View view) {
-        //הפעולה תעלה את התמונות לפייר בייס
+       if (y==4){
         Intent intent = new Intent( UploadPictures.this, Main2Activity.class );
-        startActivity( intent );
+        startActivity( intent );}
+       else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -198,29 +204,30 @@ public class UploadPictures extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         String st = item.getTitle().toString();
 
-        if (st.equals("agreement")){
+        if (st.equals("agreement")&&y==4){
             Intent t=new Intent(this, MainActivity.class);
             startActivity(t);}
-
-        if (st.equals("Upload")){
+        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
+        if (st.equals("Upload")&&y==4){
             Intent t=new Intent(this, UploadPictures.class);
             startActivity(t);
         }
-
-        if (st.equals("Data")){
+        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
+        if (st.equals("Data")&&y==4){
             Intent t=new Intent(this, Main2Activity.class);
             startActivity(t);
         }
-
-        if (st.equals("Form101")){
+        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
+        if (st.equals("Form101")&&y==4){
             Intent t=new Intent(this, Main3Activity.class);
             startActivity(t);
         }
-        if (st.equals("E-mail")){
+        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
+        if (st.equals("E-mail")&&y==4){
             Intent t=new Intent(this, Main4Activity.class);
             startActivity(t);
         }
-
+        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
         return super.onOptionsItemSelected(item);
     }
 

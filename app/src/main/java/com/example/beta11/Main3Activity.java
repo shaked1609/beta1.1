@@ -9,9 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Toast;
 
+/**
+ * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
+ * @version	4.1 (Jelly Bean)
+ * @since		20/03/2020
+ *באקטיביטי הזה יוצג טופס 101 מקוון בWebView ובסיום המילוי ישלח למייל הרכז
+ */
 public class Main3Activity extends AppCompatActivity {
 WebView we;
+int c=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -24,11 +32,13 @@ WebView we;
         we.getSettings().setJavaScriptEnabled( true );
         String url="https://tofes101.co.il/fill-form-101/";
         we.loadUrl( url );
-
+c++;
     }
     public void next1(View view){
+        if (c>=2){
         Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
-        startActivity(intent);
+        startActivity(intent);}
+        else Toast.makeText( Main3Activity.this, "Fill out the form", Toast.LENGTH_LONG ).show();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,25 +49,25 @@ WebView we;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         String st = item.getTitle().toString();
 
-        if (st.equals("agreement")){
+        if (st.equals("agreement")&&c>=2){
             Intent t=new Intent(this, MainActivity.class);
             startActivity(t);}
 
-        if (st.equals("Upload")){
+        if (st.equals("Upload")&&c>=2){
             Intent t=new Intent(this, UploadPictures.class);
             startActivity(t);
         }
 
-        if (st.equals("Data")){
+        if (st.equals("Data")&&c>=2){
             Intent t=new Intent(this, Main2Activity.class);
             startActivity(t);
         }
 
-        if (st.equals("Form101")){
+        if (st.equals("Form101")&&c>=2){
             Intent t=new Intent(this, Main3Activity.class);
             startActivity(t);
         }
-        if (st.equals("E-mail")){
+        if (st.equals("E-mail")&&c>=2){
             Intent t=new Intent(this, Main4Activity.class);
             startActivity(t);
         }

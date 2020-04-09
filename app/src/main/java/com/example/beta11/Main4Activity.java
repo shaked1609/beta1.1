@@ -29,9 +29,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.beta11.FDrif;
 import com.squareup.picasso.Picasso;
-
-import java.io.File;
-import java.io.IOException;
+/**
+ * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
+ * @version	4.1 (Jelly Bean)
+ * @since		20/03/2020
+ *באקטיביטי הזה לחצן ירוק אשר יפתח תיבת דו שיח ושם יזין המתרגל את הפרטים הנדרשים לאחר מכן על פי הנתונים יוצגו התמונות מהפייר בייס אשר הועלו באקטיביטי השני אשר יצטרך לעלות ולשלוח במייל לרכז המתרגלים
+ */
 
 
 public class Main4Activity extends AppCompatActivity {
@@ -39,6 +42,7 @@ String Email,ID;
     StorageReference mStorageRef;
     public static StorageReference Ref;
     ImageView iV;
+    int t=1;
     public Uri imguri;
 
 
@@ -48,10 +52,6 @@ String Email,ID;
         setContentView( R.layout.activity_main4 );
 iV=(ImageView)findViewById( R.id.imageView2 ) ;
         mStorageRef = FirebaseStorage.getInstance().getReference();
-
-        //edt=(EditText)findViewById( R.id.edt );
-        //name=(EditText)findViewById( R.id.fullName );
-        //iV=(ImageView)findViewById( R.id.imageView2 );
         Button buttonSend = findViewById(R.id.button12);
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,6 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
                 sendMail();
             }
         });
-
         Button mShowDialog = (Button) findViewById(R.id.btn);
         mShowDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +147,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
 
 
     private void sendMail() {
+        if (t==4){
         String recipientList =Email;
         String[] recipients = recipientList.split(",");
         String subject = "Income Tax Form and Police and signature of:"+ID;
@@ -157,7 +157,8 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Choose an email client"));
+        startActivity(Intent.createChooser(intent, "Choose an email client"));}
+        else Toast.makeText( Main4Activity.this, "See what photos you need to send", Toast.LENGTH_LONG ).show();
     }
 
     @Override
@@ -196,17 +197,17 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
     }
 
     public void sss(View view) {
-        DownloadImg();
+        DownloadImg();t++;
 
     }
 
     public void bbb(View view) {
-        DownloadImg2();
+        DownloadImg2();t++;
     }
 
 
 
     public void ccc(View view) {
-        DownloadImg3();
+        DownloadImg3();t++;
     }
 }

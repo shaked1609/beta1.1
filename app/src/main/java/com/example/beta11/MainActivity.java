@@ -32,7 +32,6 @@ int x=1;
         String url="https://drive.google.com/file/d/1-mPGDN9CZVw9FyV17b-NrMvgYP8Yrid-/view?usp=sharing";
         wv.loadUrl( url );
         x++;
-        //https://signature-maker.net/signature-creator
     }
     public void signature(View view){
         if (x==2){
@@ -49,7 +48,7 @@ int x=1;
         Intent intent = new Intent(MainActivity.this, UploadPictures.class);
         startActivity(intent);
         }
-        else  Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+        else  Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_LONG ).show();
     }
 @Override
     public boolean onCreateOptionsMenu(Menu menu) {
