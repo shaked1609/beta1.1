@@ -25,6 +25,12 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.UUID;
+/**
+ * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
+ * @version	4.1 (Jelly Bean)
+ * @since		20/03/2020
+ * האקטיביטי יציג בלחיצת כפתור למתרגל הבא להירשם לבית הספר את הסכם תנאי העסקה של בית הספר ויאשר את התנאים באמצעןת לחיצה על הפתוח מתחתיו וחתימה בתוך WebView ולאחר מכן יועבר לאקטיביטי הבא
+ */
 
 public class UploadPictures extends AppCompatActivity {
     Button sig, pol, tax;
