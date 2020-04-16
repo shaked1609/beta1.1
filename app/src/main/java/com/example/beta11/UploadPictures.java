@@ -29,7 +29,7 @@ import java.util.UUID;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- *האקטיביטי יעלה לפייר בייס את טופס המשטרה הנדרש מהמתרגל להביא ,את טופס תיאום המס והחתימה מהאקטיביטי הראשון שפירושה אישור תנאי העסקה
+ *The activity will cost Pierre Bayes the police form required by the practitioner to bring the tax and signature coordination form from the first activity which means approval of the terms of the transaction
  */
 
 public class UploadPictures extends AppCompatActivity {
@@ -73,6 +73,9 @@ public class UploadPictures extends AppCompatActivity {
         } );
     }
 
+    /**
+     *This will open the user to the gallery to select a photo
+     */
     private void chooseImage() {
         if (ID.getText().length()==9) {
             Intent intent = new Intent();
@@ -84,7 +87,6 @@ public class UploadPictures extends AppCompatActivity {
             Toast.makeText( UploadPictures.this, "Incorrect ID", Toast.LENGTH_SHORT ).show();
         }
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult( requestCode, resultCode, data );
@@ -100,6 +102,10 @@ public class UploadPictures extends AppCompatActivity {
         }
     }
 
+    /**
+     *Upload the photo he chose from Pierre Bayes Gallery
+     *  @param view
+     */
     public void im1(View view) {
         if (ID.getText().length()==9) {
             ID.setVisibility( view.GONE );
@@ -129,7 +135,10 @@ public class UploadPictures extends AppCompatActivity {
             Toast.makeText( UploadPictures.this, "Incorrect ID", Toast.LENGTH_SHORT ).show();
         }
     }
-
+    /**
+     *Upload the photo he chose from Pierre Bayes Gallery
+     *  @param view
+     */
     public void im2(View view) {
         if (ID.getText().length()==9) {
             if (filePath != null) {
@@ -159,7 +168,10 @@ public class UploadPictures extends AppCompatActivity {
         }
 
     }
-
+    /**
+     *Upload the photo he chose from Pierre Bayes Gallery
+     *  @param view
+     */
     public void im3(View view) {
         if (ID.getText().length()==9) {
             if (filePath != null) {
@@ -188,7 +200,10 @@ public class UploadPictures extends AppCompatActivity {
             Toast.makeText( UploadPictures.this, "Incorrect ID", Toast.LENGTH_SHORT ).show();
         }
     }
-
+    /**
+     *This will take the user to the next screen
+     *  @param view
+     */
     public void next2(View view) {
        if (y==4){
         Intent intent = new Intent( UploadPictures.this, Main2Activity.class );

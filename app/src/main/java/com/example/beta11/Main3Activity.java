@@ -15,7 +15,7 @@ import android.widget.Toast;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- *באקטיביטי הזה יוצג טופס 101 מקוון בWebView ובסיום המילוי ישלח למייל הרכז
+ *This activity will display a Form 101 online on WebView and when filled out will be mailed to the coordinator
  */
 public class Main3Activity extends AppCompatActivity {
 WebView we;
@@ -27,6 +27,11 @@ int c=1;
         we=(WebView)findViewById( R.id.tofes );
 
     }
+
+    /**
+     *This will open Form 101
+     *  @param view
+     */
     public void open (View view ){
         we.setVisibility( View.VISIBLE );
         we.getSettings().setJavaScriptEnabled( true );
@@ -34,6 +39,11 @@ int c=1;
         we.loadUrl( url );
 c++;
     }
+
+    /**
+     *This will take the user to the next screen
+     * @param view
+     */
     public void next1(View view){
         if (c>=2){
         Intent intent = new Intent(Main3Activity.this, Main4Activity.class);

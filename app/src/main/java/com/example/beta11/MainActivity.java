@@ -15,7 +15,7 @@ import android.widget.Toast;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- * האקטיביטי יציג בלחיצת כפתור למתרגל הבא להירשם לבית הספר את הסכם תנאי העסקה של בית הספר ויאשר את התנאים באמצעןת לחיצה על הפתוח מתחתיו וחתימה בתוך WebView ולאחר מכן יועבר לאקטיביטי הבא
+ * The activity will click the button for the next practitioner to sign up for the school's terms of employment agreement and confirm the terms by clicking on the open below and signing within WebView and then moving to the next activity
  */
 public class MainActivity extends AppCompatActivity {
     WebView wv;
@@ -26,6 +26,11 @@ int x=1;
         setContentView( R.layout.activity_main );
         wv=(WebView)findViewById(R.id.Wv);
     }
+
+    /**
+     *This will display the WebView Terms of Service Agreement
+     *  @param view
+     */
     public void show (View view ){
         wv.setVisibility( View.VISIBLE );
         wv.getSettings().setJavaScriptEnabled( true );
@@ -33,6 +38,11 @@ int x=1;
         wv.loadUrl( url );
         x++;
     }
+
+    /**
+     *This will display the signature for WebView approval
+     *  @param view
+     */
     public void signature(View view){
         if (x==2){
         wv.getSettings().setJavaScriptEnabled( true );
@@ -43,6 +53,11 @@ int x=1;
             Toast.makeText( MainActivity.this, "You haven't read the terms of the deal", Toast.LENGTH_SHORT ).show();
         }
     }
+
+    /**
+     *This will take the user to the next screen
+     *  @param view
+     */
     public void next (View view){
         if(x==3){
         Intent intent = new Intent(MainActivity.this, UploadPictures.class);

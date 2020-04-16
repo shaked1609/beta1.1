@@ -16,7 +16,7 @@ import android.widget.Toast;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- *באקטיביטי הזה נקבל מידע על המשתמש כגון פרטים אישיים ופרטי חשבון בנק דבר שבית הספר דורש מכל מתרגל לבצע לפני הירשמותו לבית הספר
+ *In this activity we will receive user information such as personal and bank account information which the school requires from each practitioner before enrolling in the school.
  */
 public class Main2Activity extends AppCompatActivity {
 EditText et16;
@@ -42,6 +42,10 @@ int z=1;
             }
         });
     }
+
+    /**
+     * The action will send the email with the details to the coordinator
+     */
     private void sendMail() {
         if (z==2){
         String recipientList = et16.getText().toString();
@@ -66,6 +70,10 @@ int z=1;
         startActivity(Intent.createChooser(intent, "Choose an email client"));}
         else {Toast.makeText( Main2Activity.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
     }
+    /**
+     *  @param view
+     *This will take the user to the next screen
+     */
     public void sd(View view){
         if (z==2){
         Intent intent = new Intent(Main2Activity.this, Main3Activity.class);

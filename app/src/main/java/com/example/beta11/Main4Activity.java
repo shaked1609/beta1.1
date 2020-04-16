@@ -33,7 +33,7 @@ import com.squareup.picasso.Picasso;
  * @author		shaked mhachloof <sm3505@bs.amalnet.k12.il>
  * @version	4.1 (Jelly Bean)
  * @since		20/03/2020
- *באקטיביטי הזה לחצן ירוק אשר יפתח תיבת דו שיח ושם יזין המתרגל את הפרטים הנדרשים לאחר מכן על פי הנתונים יוצגו התמונות מהפייר בייס אשר הועלו באקטיביטי השני אשר יצטרך לעלות ולשלוח במייל לרכז המתרגלים
+ *This activity will have a green button which will open a dialog and where the practitioner will enter the required details according to the data.
  */
 
 
@@ -88,7 +88,9 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         });
     }
 
-
+    /**
+     * This will download the form of the form from the cloud
+     */
     private void DownloadImg() {// a method that downloads the url of the last added image
         Ref = mStorageRef.child(""+ID).child( ""+ID+"po" );
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
@@ -107,7 +109,9 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         });
 
     }
-
+    /**
+     *This will download the form of the form from the cloud
+     */
     private void DownloadImg2() {// a method that downloads the url of the last added image
         Ref = mStorageRef.child(""+ID).child( ""+ID+"tax" );
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
@@ -126,6 +130,9 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         });
 
     }
+    /**
+     * This will download the form of the form from the cloud
+     */
     private void DownloadImg3() {// a method that downloads the url of the last added image
         Ref = mStorageRef.child(""+ID).child( ""+ID+"sig" );
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
@@ -145,13 +152,15 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
 
     }
 
-
+    /**
+     * This will download the form of the form from the cloud
+     */
     private void sendMail() {
         if (t==4){
         String recipientList =Email;
         String[] recipients = recipientList.split(",");
         String subject = "Income Tax Form and Police and signature of:"+ID;
-        String message = "בבקשה לצרף את התמונות של הטפסים ולשלוח";
+        String message = "Please attach the photos of the forms and submit";
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL, recipients);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -196,17 +205,25 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * The action will schedule the action and download the image
+     * @param view
+     */
     public void sss(View view) {
         DownloadImg();t++;
 
     }
-
+    /**
+     * The action will schedule the action and download the image
+     * @param view
+     */
     public void bbb(View view) {
         DownloadImg2();t++;
     }
-
-
-
+    /**
+     *The action will schedule the action and download the image
+     * @param view
+     */
     public void ccc(View view) {
         DownloadImg3();t++;
     }

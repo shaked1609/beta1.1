@@ -17,7 +17,7 @@
         android:background="@drawable/gradient"
         android:bufferType="normal"
         android:gravity="center"
-        android:text="לקריאת הסכם עבודה אישי לחץ על כפתור הצג"
+        android:text="לקריאת הסכם עבודה אישי לחץ על כפתור הצג הסכם תנאי העסקה"
         android:textSize="28dp" />
 
     <WebView
