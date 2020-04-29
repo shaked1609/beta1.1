@@ -18,7 +18,7 @@ import android.widget.Toast;
  * @since		20/03/2020
  *In this activity we will receive user information such as personal and bank account information which the school requires from each practitioner before enrolling in the school.
  */
-public class Main2Activity extends AppCompatActivity {
+public class PersonalInformation extends AppCompatActivity {
 EditText et16;
 EditText a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15;
 EditText b1,b2,b3,b4,b5;
@@ -68,7 +68,7 @@ int z=1;
 
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));}
-        else {Toast.makeText( Main2Activity.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
+        else {Toast.makeText( PersonalInformation.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
     }
     /**
      *  @param view
@@ -76,9 +76,9 @@ int z=1;
      */
     public void sd(View view){
         if (z==2){
-        Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+        Intent intent = new Intent(PersonalInformation.this, Form101.class);
         startActivity(intent);}
-        else {Toast.makeText( Main2Activity.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
+        else {Toast.makeText( PersonalInformation.this, "Any statistic you did not specify would have to bring in independently", Toast.LENGTH_LONG ).show();z++;}
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,7 +90,7 @@ int z=1;
         String st = item.getTitle().toString();
 
         if (st.equals("agreement")){
-            Intent t=new Intent(this, MainActivity.class);
+            Intent t=new Intent(this, agreement.class);
             startActivity(t);}
 
         if (st.equals("Upload")){
@@ -99,16 +99,16 @@ int z=1;
         }
 
         if (st.equals("Data")){
-            Intent t=new Intent(this, Main2Activity.class);
+            Intent t=new Intent(this, PersonalInformation.class);
             startActivity(t);
         }
 
         if (st.equals("Form101")){
-            Intent t=new Intent(this, Main3Activity.class);
+            Intent t=new Intent(this, Form101.class);
             startActivity(t);
         }
         if (st.equals("E-mail")){
-            Intent t=new Intent(this, Main4Activity.class);
+            Intent t=new Intent(this, Appendices.class);
             startActivity(t);
         }
 

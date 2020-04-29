@@ -17,9 +17,9 @@ import android.widget.Toast;
  * @since		20/03/2020
  * The activity will click the button for the next practitioner to sign up for the school's terms of employment agreement and confirm the terms by clicking on the open below and signing within WebView and then moving to the next activity
  */
-public class MainActivity extends AppCompatActivity {
+public class agreement extends AppCompatActivity {
     WebView wv;
-int x=1;
+int counter=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -36,7 +36,7 @@ int x=1;
         wv.getSettings().setJavaScriptEnabled( true );
         String url="https://drive.google.com/file/d/1-mPGDN9CZVw9FyV17b-NrMvgYP8Yrid-/view?usp=sharing";
         wv.loadUrl( url );
-        x++;
+        counter++;
     }
 
     /**
@@ -44,13 +44,13 @@ int x=1;
      *  @param view
      */
     public void signature(View view){
-        if (x==2){
+        if (counter==2){
         wv.getSettings().setJavaScriptEnabled( true );
         String url="https://signature-maker.net/signature-creator";
         wv.loadUrl( url );
-        x++;}
+            counter++;}
         else{
-            Toast.makeText( MainActivity.this, "You haven't read the terms of the deal", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( agreement.this, "You haven't read the terms of the deal", Toast.LENGTH_SHORT ).show();
         }
     }
 
@@ -59,11 +59,11 @@ int x=1;
      *  @param view
      */
     public void next (View view){
-        if(x==3){
-        Intent intent = new Intent(MainActivity.this, UploadPictures.class);
+        if(counter==3){
+        Intent intent = new Intent(agreement.this, UploadPictures.class);
         startActivity(intent);
         }
-        else  Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_LONG ).show();
+        else  Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_LONG ).show();
     }
 @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,31 +74,31 @@ int x=1;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         String st = item.getTitle().toString();
 
-        if ((st.equals("agreement")) && (x==3)){
-            Intent t=new Intent(this, MainActivity.class);
+        if ((st.equals("agreement")) && (counter==3)){
+            Intent t=new Intent(this, agreement.class);
             startActivity(t);}
-        else Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
-        if (st.equals("Upload") && x==3){
+        else Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+        if (st.equals("Upload") && counter==3){
             Intent t=new Intent(this, UploadPictures.class);
             startActivity(t);
         }
-        else Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+        else Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
 
         if (st.equals("Data")){
-            Intent t=new Intent(this, Main2Activity.class);
+            Intent t=new Intent(this, PersonalInformation.class);
             startActivity(t);
         }
-       else Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+       else Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
         if (st.equals("Form101")){
-            Intent t=new Intent(this, Main3Activity.class);
+            Intent t=new Intent(this, Form101.class);
             startActivity(t);
         }
-        else Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+        else Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
         if (st.equals("E-mail")){
-            Intent t=new Intent(this, Main4Activity.class);
+            Intent t=new Intent(this, Appendices.class);
             startActivity(t);
         }
-        else Toast.makeText( MainActivity.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
+        else Toast.makeText( agreement.this, "You haven't read the terms of the deal/You have not signed in for approval", Toast.LENGTH_SHORT ).show();
 
         return super.onOptionsItemSelected(item);
     }

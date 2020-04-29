@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    tools:context=".agreement">
 
 
     <TextView
@@ -18,6 +18,7 @@
         android:bufferType="normal"
         android:gravity="center"
         android:text="לקריאת הסכם עבודה אישי לחץ על כפתור הצג הסכם תנאי העסקה"
+        android:textColor="#FFFFFF"
         android:textSize="28dp" />
 
     <WebView

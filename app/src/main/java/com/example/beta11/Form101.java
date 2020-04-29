@@ -17,7 +17,7 @@ import android.widget.Toast;
  * @since		20/03/2020
  *This activity will display a Form 101 online on WebView and when filled out will be mailed to the coordinator
  */
-public class Main3Activity extends AppCompatActivity {
+public class Form101 extends AppCompatActivity {
 WebView we;
 int c=1;
     @Override
@@ -46,9 +46,9 @@ c++;
      */
     public void next1(View view){
         if (c>=2){
-        Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
+        Intent intent = new Intent(Form101.this, Appendices.class);
         startActivity(intent);}
-        else Toast.makeText( Main3Activity.this, "Fill out the form", Toast.LENGTH_LONG ).show();
+        else Toast.makeText( Form101.this, "Fill out the form", Toast.LENGTH_LONG ).show();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,7 +60,7 @@ c++;
         String st = item.getTitle().toString();
 
         if (st.equals("agreement")&&c>=2){
-            Intent t=new Intent(this, MainActivity.class);
+            Intent t=new Intent(this, agreement.class);
             startActivity(t);}
 
         if (st.equals("Upload")&&c>=2){
@@ -69,16 +69,16 @@ c++;
         }
 
         if (st.equals("Data")&&c>=2){
-            Intent t=new Intent(this, Main2Activity.class);
+            Intent t=new Intent(this, PersonalInformation.class);
             startActivity(t);
         }
 
         if (st.equals("Form101")&&c>=2){
-            Intent t=new Intent(this, Main3Activity.class);
+            Intent t=new Intent(this, Form101.class);
             startActivity(t);
         }
         if (st.equals("E-mail")&&c>=2){
-            Intent t=new Intent(this, Main4Activity.class);
+            Intent t=new Intent(this, Appendices.class);
             startActivity(t);
         }
 

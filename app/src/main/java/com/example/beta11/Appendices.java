@@ -37,7 +37,7 @@ import com.squareup.picasso.Picasso;
  */
 
 
-public class Main4Activity extends AppCompatActivity {
+public class Appendices extends AppCompatActivity {
 String Email,ID;
     StorageReference mStorageRef;
     public static StorageReference Ref;
@@ -63,7 +63,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         mShowDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Main4Activity.this);
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Appendices.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog, null);
                  final EditText mEmail = (EditText) mView.findViewById(R.id.etEmail);
                  final EditText mID = (EditText) mView.findViewById(R.id.etID);
@@ -77,10 +77,10 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
                         if(!mEmail.getText().toString().isEmpty() && !mID.getText().toString().isEmpty()){
                             Email=mEmail.getText().toString();
                             ID=mID.getText().toString();
-                            Toast.makeText(Main4Activity.this, "Data save", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Appendices.this, "Data save", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }else{
-                            Toast.makeText(Main4Activity.this, "error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Appendices.this, "error", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -96,7 +96,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iV);
+                Picasso.with(Appendices.this).load(uri).fit().centerCrop().into(iV);
             }
 
 
@@ -117,7 +117,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iV);
+                Picasso.with(Appendices.this).load(uri).fit().centerCrop().into(iV);
             }
 
 
@@ -138,7 +138,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         Ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(Main4Activity.this).load(uri).fit().centerCrop().into(iV);
+                Picasso.with(Appendices.this).load(uri).fit().centerCrop().into(iV);
             }
 
 
@@ -167,7 +167,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));}
-        else Toast.makeText( Main4Activity.this, "See what photos you need to send", Toast.LENGTH_LONG ).show();
+        else Toast.makeText( Appendices.this, "See what photos you need to send", Toast.LENGTH_LONG ).show();
     }
 
     @Override
@@ -180,7 +180,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         String st = item.getTitle().toString();
 
         if (st.equals("agreement")){
-            Intent t=new Intent(this, MainActivity.class);
+            Intent t=new Intent(this, agreement.class);
             startActivity(t);}
 
         if (st.equals("Upload")){
@@ -189,16 +189,16 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
         }
 
         if (st.equals("Data")){
-            Intent t=new Intent(this, Main2Activity.class);
+            Intent t=new Intent(this, PersonalInformation.class);
             startActivity(t);
         }
 
         if (st.equals("Form101")){
-            Intent t=new Intent(this, Main3Activity.class);
+            Intent t=new Intent(this, Form101.class);
             startActivity(t);
         }
         if (st.equals("E-mail")){
-            Intent t=new Intent(this, Main4Activity.class);
+            Intent t=new Intent(this, Appendices.class);
             startActivity(t);
         }
 

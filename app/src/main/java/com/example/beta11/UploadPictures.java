@@ -206,7 +206,7 @@ public class UploadPictures extends AppCompatActivity {
      */
     public void next2(View view) {
        if (y==4){
-        Intent intent = new Intent( UploadPictures.this, Main2Activity.class );
+        Intent intent = new Intent( UploadPictures.this, PersonalInformation.class );
         startActivity( intent );}
        else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
     }
@@ -220,7 +220,7 @@ public class UploadPictures extends AppCompatActivity {
         String st = item.getTitle().toString();
 
         if (st.equals("agreement")&&y==4){
-            Intent t=new Intent(this, MainActivity.class);
+            Intent t=new Intent(this, agreement.class);
             startActivity(t);}
         else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
         if (st.equals("Upload")&&y==4){
@@ -229,17 +229,17 @@ public class UploadPictures extends AppCompatActivity {
         }
         else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
         if (st.equals("Data")&&y==4){
-            Intent t=new Intent(this, Main2Activity.class);
+            Intent t=new Intent(this, PersonalInformation.class);
             startActivity(t);
         }
         else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
         if (st.equals("Form101")&&y==4){
-            Intent t=new Intent(this, Main3Activity.class);
+            Intent t=new Intent(this, Form101.class);
             startActivity(t);
         }
         else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
         if (st.equals("E-mail")&&y==4){
-            Intent t=new Intent(this, Main4Activity.class);
+            Intent t=new Intent(this, Appendices.class);
             startActivity(t);
         }
         else  Toast.makeText( UploadPictures.this, "You did not upload any of the files please complete the missing", Toast.LENGTH_SHORT ).show();
