@@ -44,7 +44,7 @@ int counter=1;
      *  @param view
      */
     public void signature(View view){
-        if (counter==2){
+        if (counter>=2){
         wv.getSettings().setJavaScriptEnabled( true );
         String url="https://signature-maker.net/signature-creator";
         wv.loadUrl( url );
@@ -59,7 +59,7 @@ int counter=1;
      *  @param view
      */
     public void next (View view){
-        if(counter==3){
+        if(counter>=3){
         Intent intent = new Intent(agreement.this, UploadPictures.class);
         startActivity(intent);
         }

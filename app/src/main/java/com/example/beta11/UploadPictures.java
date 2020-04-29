@@ -141,6 +141,7 @@ public class UploadPictures extends AppCompatActivity {
      */
     public void im2(View view) {
         if (ID.getText().length()==9) {
+            ID.setVisibility( view.GONE );
             if (filePath != null) {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
@@ -174,6 +175,7 @@ public class UploadPictures extends AppCompatActivity {
      */
     public void im3(View view) {
         if (ID.getText().length()==9) {
+            ID.setVisibility( view.GONE );
             if (filePath != null) {
                 final ProgressDialog progressDialog = new ProgressDialog( this );
                 progressDialog.setTitle( "Uploading...." );
