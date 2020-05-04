@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:background="@drawable/custom2"
             android:onClick="sss"
-            android:text="upload police" />
+            android:text="download police" />
 
         <Button
             android:id="@+id/button10"
@@ -42,7 +42,7 @@
             android:layout_gravity="center"
             android:onClick="bbb"
             android:background="@drawable/custom2"
-            android:text="upload tax" />
+            android:text="download tax" />
 
         <Button
             android:id="@+id/button11"
@@ -51,7 +51,7 @@
             android:layout_gravity="center"
             android:onClick="ccc"
             android:background="@drawable/custom2"
-            android:text="upload signture" />
+            android:text="download signture" />
     </LinearLayout>
 
     <ImageView

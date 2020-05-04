@@ -156,7 +156,7 @@ iV=(ImageView)findViewById( R.id.imageView2 ) ;
      * This will download the form of the form from the cloud
      */
     private void sendMail() {
-        if (t==4){
+        if (t>=4){
         String recipientList =Email;
         String[] recipients = recipientList.split(",");
         String subject = "Income Tax Form and Police and signature of:"+ID;
